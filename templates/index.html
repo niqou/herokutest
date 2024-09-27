@@ -4,16 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .about-us {
+            margin-top: 50px;
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-<h1>By Bjørgvinson. An extraordinary good carpenter</h1>
+<div class="container">
+    <h1>By Bjørgvinson. An extraordinary good carpenter</h1>
 
-<h2>Handmade chairs</h2>
-<img src="{{ url_for('static', filename='images/testbild.png') }}" alt="Example Image">
+    <h2>Handmade chairs</h2>
+    <img src="{{ url_for('static', filename='images/testbild.png') }}" alt="Example Image">
 
-<h2>Handmade bench</h2>
-<img src="{{ url_for('static', filename='images/testbild2.png') }}" alt="Example Image">
+    <h2>Handmade bench</h2>
+    <img src="{{ url_for('static', filename='images/testbild2.png') }}" alt="Example Image">
+
+    <button onclick="window.location.href='{{ url_for('admin') }}'">Go to Admin Page</button>
+
+    <div class="about-us">
+        <h2>About Us</h2>
+        <p>We are a small carpentry company that specializes in handmade stuff.
+            Our products are personally made by Agust, in Esbjerg in western Jutland
+        </p>
 
 
+
+        <p>Please use the form below to contact us.</p>
+        <form method="POST" action="{{ url_for('contact') }}">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="error">
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% endwith %}
+    </div>
+</div>
 </body>
 </html>

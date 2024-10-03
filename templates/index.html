@@ -3,103 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            padding: 20px;
-        }
-        h1, h2 {
-            text-align: center;
-        }
-        .about-us {
-            margin-top: 50px;
-            text-align: center;
-        }
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .error {
-            color: green;
-            margin-top: 10px;
-        }
-    </style>
+    <title>By Björgvinsson</title>
+    <link rel="icon" href="../static/images/icons/favIcon.svg" type="image/x-icon">
+    <!-- Links to stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">   
 </head>
+
 <body>
-<div class="container">
-    <h1>By Bjørgvinson. An extraordinary good carpenter</h1>
-
-    <h2>Handmade chairs</h2>
-    <img src="{{ url_for('static', filename='images/testbild.png') }}" alt="Example Image">
-
-    <h2>Handmade bench</h2>
-    <img src="{{ url_for('static', filename='images/testbild2.png') }}" alt="Example Image">
-
-    <button onclick="window.location.href='{{ url_for('admin') }}'">Go to Admin Page</button>
-
-    <div class="about-us">
-        <h2>About Us</h2>
-        <p>We are a small carpentry company that specializes in handmade stuff.
-            Our products are personally made by Agust, in Esbjerg in western Jutland
-        </p>
-
-
-
-        <p>Please use the form below to contact us.</p>
-        <form method="POST" action="{{ url_for('contact') }}">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <div class="error">
+    <!-- burger menu start-->
+     <menu>
+        <nav class="burger-menu">
             <ul>
-                {% for message in messages %}
-                <li>{{ message }}</li>
-                {% endfor %}
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#">GALLERY</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTACT</a></li>
             </ul>
+        </nav>
+     </menu>
+     <!-- burger menu end -->
+<!-- header start -->
+<header class="header-box">
+    <div class="header-box-logo">
+        <a href="index.html"><img src="../static/images/Agust_logo_bw.svg" alt="by_bjorgvinsson"></a>   
+    </div>
+    <nav class="header-box-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#">GALLERY</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+    <div class="header-box-social-media">
+        <a href="www.facebook.com">
+            <div class="header-box-social-media-fb"></div></a>
+        <a href="https://www.instagram.com/by_bjorgvinsson/">
+            <div class="header-box-social-media-ig"></div></a>
+        <a href="www.linkedin.com">
+            <div class="header-box-social-media-li"></div></a>
+            <div class="burger-menu-btn"></div>
+    </div>
+</header>
+<!-- header end-->
+
+<!-- main start-->
+ <main>
+    <div class="main-text">
+        <h1>Ágúst Éli <br> Björgvinsson</h1>
+         <div class="text-button-flex">
+             <p> 
+                Welcome to ByBjörnvisson. Here each piece of furniture is meticulously handcrafted, blending Icelandic heritage with timeless Danish design. Located in Esbjerg, I specialize in bespoke, one-of-a-kind creations that breathe life into any space. <br><br> 
+                <p class="main-second-paragraph">From concept to craftsmanship, every detail is refined with passion and precision, delivering unmatched quality and enduring beauty. <br> Discover the art of handmade luxury furniture, where tradition meets innovation.
+                </p>
+             </p>
+             <a class="contact-me-btn" href="#">Contact Me</a>
+         </div>
+    </div>
+</main>
+<!-- main end -->
+
+<!-- gallery start-->
+<section class="index-gallery">
+    <div class="wrapper-main index-flex"><h2>project gallery</h2>
+    <a href="#" class="gallery-box">
+        <div class="dark-overlay"></div>
+        <h3>Chair</h3>
+    </a>
+    <a href="#" class="gallery-box">
+        <div class="dark-overlay"></div>
+        <h3>Table</h3>
+    </a>
+    <a href="#" class="gallery-box">
+        <div class="dark-overlay"></div>
+        <h3>Bench</h3>
+    </a>
+    <a href=# class="gallery-box">
+        <div class="dark-overlay"></div>
+        <h3>Shelf</h3>
+    </a>
+    <a href=# class="gallery-box">
+        <div class="dark-overlay"></div>
+        <h3>Wine-rack</h3>
+    </a>
+</div>
+</section>
+
+ <!-- gallery end-->
+
+ <!-- About start -->
+<section class="index-about">
+    <div class="wrapper-main index-flex">
+        <div class="index-about-img">
+            <img src="../static/images/agust_profil.jpg" alt="Agust">
         </div>
-        {% endif %}
-        {% endwith %}
+        <div class="index-about-text">
+            <h2>
+                About Me
+            </h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ducimus, distinctio ipsum doloremque quisquam praesentium maxime placeat ullam! <br><br>
+                aperiam praesentium fuga, esse ullam quas ratione eius illum explicabo nisi!
+            </p>
+            <a href="#">Contact Me</a>
+        </div>
+    </div>
+</section>
+  <!-- About end -->
+
+  <!-- footer start -->
+
+<footer class="footer-main">
+<div class="wrapper-main footer-main-flex">
+    <div class="footer-testimony">
+        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ducimus illum ad consequatur beatae numquam dignissimos"</p>
+    </div>
+    <div class="footer-testimony">
+        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ducimus illum ad consequatur beatae numquam dignissimos"</p>
+    </div>
+    <div class="footer-testimony">
+        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ducimus illum ad consequatur beatae numquam dignissimos"</p>
+    </div>
+    <div class="footer-testimony">
+        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ducimus illum ad consequatur beatae numquam dignissimos"</p>
+    </div>
+    <div class="footer-testimony">
+        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ducimus illum ad consequatur beatae numquam dignissimos"</p>
+    </div>
+
+    <a class="footer-contactme" href="#">Contact Me</a>
+
+    <div class="footer-sitemap">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">GALLERY</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+        <ul class="footer-gallery">
+            <li><a href="#">Chair</a></li>
+            <li><a href="#">Table</a></li>
+            <li><a href="#">Bench</a></li>
+            <li><a href="#">Shelf</a></li>
+            <li><a href="#">Wine-rack</a></li>
+        </ul>
+        <ul>
+            <li>
+                <p>
+                    Thank you for visiting my website! Don't hesitate to contact me with inquiries, i am able to build you whatever you need or desire. <br><br>
+                    &copy; Alfred & Niklas Group Ltd
+                </p>
+            </li>
+        </ul>
+        <ul>
+            <li><p>Get In Touch</p></li>
+            <li><p>+45 123456</p></li>
+            <li><p>inquiries@bybjorgvinsson.com</p></li>
+            <li><p>Esbjerg, DK</p></li>
+        </ul>
     </div>
 </div>
+</footer>
+
+<script src="main.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,257 @@
+/*----main start----*/
+
+main {
+  width: 100%;
+  height: calc(100vh - 100px);
+  margin-top: 100px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+  rgba(0, 0, 0, 0.5)), url(../static/images/gear-5701226_1920.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; 
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  z-index: 100;
+}
+
+.contact-me-btn {
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  background-color: var(--clr-rose700);
+  padding: 0 20px;
+  margin: 20px 0;
+  width: fit-content;
+}
+
+.contact-me-btn:hover {
+    color: var(--clr-bg);
+    background-color: var(--clr-lightbrown);
+}
+
+.main-text {
+  margin-left: 40px;
+  margin-top: 40px;
+  max-width: 550px;
+}
+
+.main-text p {
+  margin-top: 20px;
+  text-shadow: 2px 2px var(--clr-dark);
+}
+
+/*----main end----*/
+
+/*----gallery start----*/
+.index-gallery {
+  width: 100%;
+  padding: 60px 0;
+  background-color: var(--clr-brown);
+  display: flex;
+  justify-content: center;
+  column-gap: 40px;
+  flex-wrap: wrap;
+}
+
+.index-gallery h2 {
+  color: var(--clr-dark);
+  text-align: center;
+  padding-bottom: 40px;
+  flex-basis: 100%;
+}
+
+.gallery-box {
+  width: 16rem;
+  height: 28rem;
+  background-color: #111;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.gallery-box h3 {
+  text-align: center;
+  z-index: 100;
+}
+
+/* gallery images and hover*/
+.gallery-box:nth-child(2) {
+  background-image: url(../static/images/bybjörgvinsson_stol.jpg);
+}
+.gallery-box:nth-child(3) {
+  background-image: url(../static/images/bybjörgvinsson_stol.jpg);
+}
+.gallery-box:nth-child(4) {
+  background-image: url(../static/images/bybjörgvinsson_stol.jpg);
+}
+.gallery-box:nth-child(5) {
+  background-image: url(../static/images/bybjörgvinsson_stol.jpg);
+}
+.gallery-box:nth-child(6) {
+  background-image: url(../static/images/bybjörgvinsson_stol.jpg);
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #130903;
+  opacity: 0.8;
+  transition: all ease-in-out 0.6s;
+}
+
+.gallery-box:hover .dark-overlay {
+  opacity: 0;
+}
+
+/*----gallery end----*/
+
+/*----About start----*/
+
+.index-about {
+  width: 100%;
+  padding: 60px 0;
+  background-color: var(--clr-muted);
+}
+
+.index-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 40px;
+}
+
+.index-about-img img {
+  width: 300px;
+  border-radius: 50%;
+  filter: grayscale(80%);
+}
+
+.index-about-text {
+  flex-basis: 455px;
+  padding-left: 60px;
+}
+
+.index-about-text p {
+  padding: 20px 0;
+}
+
+.index-about-text a {
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  background-color: var(--clr-rose700);
+  padding: 0 20px;
+  width: fit-content;
+}
+
+.index-about-text a:hover {
+  color: var(--clr-bg);
+  background-color: var(--clr-lightbrown);
+}
+
+/*----About end----*/
+
+@media only screen and (max-width: 600px){
+
+  .wrapper-main {
+    width: calc(100%-20px);
+  }
+
+  main {
+    align-items: flex-end;
+  }
+
+  .main-text {
+    text-align: center;
+    padding-bottom: 8vh;
+    max-width: fit-content;
+    margin-left: 0px;
+  }
+  
+  .main-text h1{
+    font-size: var(--size-4xl);
+    line-height: 1.4;
+    text-align: center;
+  }
+  
+  .main-text p {
+    text-align: center;
+    padding: 0 20px;
+    font-size: var(--size-sm);
+    text-shadow: 2px 2px var(--clr-dark);
+
+  }
+
+  .main-second-paragraph {
+    display: none;
+  }
+
+  main a {
+    margin: 30px auto;
+  }
+
+  .contact-me-btn {
+   margin: auto;
+  }
+
+/*----gallery start----*/
+
+  .index-gallery .wrapper-main {
+    padding: 10px 0;
+    row-gap: 10px;
+  }
+  
+  .index-gallery h2 {
+    padding-bottom: 20px;
+  }
+  
+  .gallery-box {
+    width: 100%;
+    height: 12rem;
+   
+  }
+
+  /*----About start----*/
+  
+  .index-about {
+    height: calc(100vh-80px);
+    padding-top: 80px;
+  }
+  
+  .index-flex {
+    row-gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .index-about h2 {
+    text-align: center;
+  }
+
+  .index-about-img {
+    width: 60%;
+  }
+
+  .index-about-img img {
+    width: 100%;
+  }
+  
+  .index-about-text {
+    text-align: center;
+  }
+  
+  .index-about-text p {
+    text-align: center;
+  }
+  
+  .index-about-text a {
+    margin: 0 auto;
+  }
+}
